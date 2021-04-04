@@ -19,9 +19,13 @@ object task2 {
     import spark.implicits._
 
     val txns_df = spark.read.format("csv").option("header", "true").load("file:///C:/Users/abhis/Downloads/sourcefiles/coviddata/covid-data.txt")
-    .groupBy("Direction","Year","Weekday").agg(sum("Value").alias("sum"))
     
-    txns_df.show()
+    val filter_txns = txns_df.filter(col("Direction")==="Exports").filter(col("Year")==="2015").filter(col("Weekday")==="Saturday")
+    
+    
+    val display = filter_txns.groupBy("Direction","Year","Weekday").agg(sum("Value").alias("sum"))
+    
+    display.show()
 
   }
 }
