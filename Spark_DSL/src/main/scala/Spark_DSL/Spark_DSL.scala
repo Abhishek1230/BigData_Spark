@@ -30,15 +30,15 @@ object Spark_DSL {
 
     println("**********************DSL Result**************************")
 
-    //  val df_dsl = txns_read.select("txnno","txndate","custno","amount","category","spendby")
+    //  val df_dsl = txns_read.selectExpr("txnno","txndate","custno","amount","category","spendby")
     //                            .filter(col("category") === "Gymnastics" && col("spendby") ==="credit")
 
-    //  val df_dsl = txns_read.select("txnno","txndate","custno","amount","category","spendby")
+    //  val df_dsl = txns_read.selectExpr("txnno","txndate","custno","amount","category","spendby")
     //                            .filter(col("category") like "%Sports%")
 
-    //  val df_dsl = txns_read.select("txnno","txndate","custno","amount","category","spendby")
+    //  val df_dsl = txns_read.selectExpr("txnno","txndate","custno","amount","category","spendby")
     //                            .filter(col("category").isin("Team Sports", "Water Sports"))
-    //  val df_dsl = txns_read.select("txnno","txndate","custno","amount","category","spendby")
+    //  val df_dsl = txns_read.selectExpr("txnno","txndate","custno","amount","category","spendby")
     //                            .filter(col("category").isNotNull)
     //    val df_dsl = txns_read.selectExpr("txnno","txndate","substring(txndate,7,4)as year","custno","amount","category","spendby")
     //                            .filter(col("category").isNotNull)
